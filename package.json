@@ -13,7 +13,7 @@
         "postbuild": "cpx src/**/*.{json,js} dist",
         "start": "node dist/server.js",
         "prestart": "npm run build",
-        "test": "mocha --reporter spec --require ts-node/register --exit test/**/*.test.ts",
+        "test": "mocha --reporter spec --require ts-node/register --exit tests/**/*.test.ts",
         "pretest": "npm run build",
         "wstart": "concurrently \"tsc -w\" \"cpx src/**/*.{json,js} dist --watch\" \"node dist/server.js\"",
         "prewstart": "npm run build"

@@ -32,7 +32,7 @@
                 "ts-node/register",
                 "--colors",
                 "--exit",
-                "${workspaceRoot}/test/**/*.test.ts"
+                "${workspaceRoot}/tests/**/*.test.ts"
             ],
             "problemMatcher": "$tsc"
         }
