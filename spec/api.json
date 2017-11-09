@@ -12,12 +12,12 @@
 	],
 	"basePath": "/",
 	"paths": {
-		"/subscribers": {
+		"/users": {
 			"get": {
 				"tags": [
-					"Subscribers"
+					"Users"
 				],
-				"operationId": "subscribers_get",
+				"operationId": "users_get",
 				"consumes": [],
 				"produces": [
 					"application/json",
@@ -29,7 +29,7 @@
 						"schema": {
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/Subscriber"
+								"$ref": "#/definitions/User"
 							}
 						}
 					}
@@ -37,12 +37,12 @@
 				"deprecated": false
 			}
 		},
-		"/subscribers/{id}": {
+		"/users/{id}": {
 			"get": {
 				"tags": [
-					"Subscribers"
+					"User"
 				],
-				"operationId": "subscribers_getById",
+				"operationId": "users_getById",
 				"consumes": [],
 				"produces": [
 					"application/json",
@@ -61,10 +61,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/Subscribers"
-							}
+							"$ref": "#/definitions/User"
 						}
 					}
 				},
@@ -73,7 +70,7 @@
 		}
 	},
 	"definitions": {
-		"Subscriber": {
+		"User": {
 			"type": "object",
 			"properties": {
 				"id": {

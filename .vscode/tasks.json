@@ -30,8 +30,8 @@
                 "node_modules/mocha/bin/mocha",
                 "--reporter",
                 "spec",
-                "--compilers",
-                "ts:ts-node/register",
+                "--require",
+                "ts-node/register",
                 "--colors",
                 "${workspaceRoot}/test/**/*.test.ts"
             ],

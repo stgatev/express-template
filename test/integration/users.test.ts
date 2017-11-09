@@ -2,14 +2,14 @@ import * as mocha from 'mocha';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
-import app from '../src/app';
+import app from '../../src/app';
 
 chai.use(chaiHttp);
 const expect = chai.expect;
 
-describe('GET subscribers', () => {
+describe('GET users', () => {
     it('responds with JSON array', () => {
-        return chai.request(app).get('/subscribers').then(res => {
+        return chai.request(app).get('/users').then(res => {
             expect(res.status).to.equal(200);
             expect(res).to.be.json;
             expect(res.body).to.be.an('array');
@@ -18,21 +18,21 @@ describe('GET subscribers', () => {
     });
 
     it('should include Trevor Plantagenet', () => {
-        return chai.request(app).get('/subscribers/1').then(res => {
-            let subscriber = res.body;
-            expect(subscriber).to.exist;
-            expect(subscriber).to.have.all.keys([
+        return chai.request(app).get('/users/1').then(res => {
+            let user = res.body;
+            expect(user).to.exist;
+            expect(user).to.have.all.keys([
                 'id',
                 'name'
             ]);
-            expect(subscriber.name).to.equal("Trevor Plantagenet");
+            expect(user.name).to.equal("Trevor Plantagenet");
         });
     });
 });
 
-describe('GET subscribers/:id', () => {
+describe('GET users/:id', () => {
     it('responds with single JSON object', () => {
-        return chai.request(app).get('/subscribers/1').then(res => {
+        return chai.request(app).get('/users/1').then(res => {
             expect(res.status).to.equal(200);
             expect(res).to.be.json;
             expect(res.body).to.be.an('object');
@@ -40,7 +40,7 @@ describe('GET subscribers/:id', () => {
     });
 
     it('should return Trevor Plantagenet', () => {
-        return chai.request(app).get('/subscribers/1').then(res => {
+        return chai.request(app).get('/users/1').then(res => {
             expect(res.body.name).to.equal('Trevor Plantagenet');
         });
     });

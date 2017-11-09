@@ -4,7 +4,7 @@ import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 import * as swaggerize from 'swaggerize-express';
 import * as swaggerUi from 'swaggerize-ui';
-import * as uuid from 'node-uuid';
+import * as uuid from 'uuid';
 import * as config from 'config';
 
 // iisnode changes the working directory to that of the handler
