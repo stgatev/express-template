@@ -12,10 +12,12 @@
         {
             "taskName": "build",
             "isBuildCommand": true,
+            "isShellCommand": true,
             "echoCommand": true,
-            "command": "node",
+            "command": "npm",
             "args": [
-                "node_modules/typescript/bin/tsc"
+                "run",
+                "build"
             ],
             "problemMatcher": "$tsc"
         },
