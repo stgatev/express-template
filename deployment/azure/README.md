@@ -17,6 +17,10 @@ If using Azure's Git deployment option, with the application set to monitor the 
 ### Setting the Working Directory
 Azure switches the working directory to that of the entry script when invoking *iisnode*, in this case, **dist/**. In dev, the working directory is not changed, and is usually the root of the project. To match the environments, add the following line at the top of **app.ts**:
 ```
+process.chdir(path.resolve(__dirname + './..'));
+```
+Like this:
+```
 import ...
 
 // iisnode changes the working directory to that of the handler
