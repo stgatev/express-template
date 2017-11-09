@@ -1,0 +1,21 @@
+{
+    "name": "express-template",
+    "version": "1.0.0",
+    "description": "Express Template",
+    "main": "dist/server.js",
+    "repository": "git@github.com:stgatev/express-template.git",
+    "author": "Stan Gatev <stgatev@yahoo.com>",
+    "license": "SEE LICENSE IN license.txt",
+    "scripts": {
+        "clean": "rimraf dist",
+        "build": "tsc",
+        "prebuild": "npm run clean",
+        "postbuild": "cpx src/**/*.{json,js} dist",
+        "start": "node dist/server.js",
+        "prestart": "npm run build",
+        "test": "mocha --reporter spec --compilers ts:ts-node/register test/**/*.test.ts",
+        "pretest": "npm run build",
+        "wstart": "concurrently \"tsc -w\" \"cpx src/**/*.{json,js} dist --watch\" \"node dist/server.js\"",
+        "prewstart": "npm run build"
+    }
+}
