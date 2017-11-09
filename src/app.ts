@@ -21,12 +21,17 @@ class App {
         this.express.use(bodyParser.json());
         this.express.use(bodyParser.urlencoded({ extended: false }));
 
+        // REST handlers
         this.express.use(swaggerize({
             api: path.resolve('./spec/api.json'),
             handlers: path.resolve('./dist/handlers'),
             docspath: '/swagger/docs/v1'
         }));
 
+        // Static content
+        this.express.use('/data', express.static('data'));
+
+        // API spec
         this.express.use('/swagger', swaggerUi({
             docs: '/swagger/docs/v1'
         }));

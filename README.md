@@ -10,15 +10,19 @@ This is a NodeJS / Express application. It is written in TypeScript, and uses Sw
 #### NodeJS with NPM
 Download Node from [nodejs.org](https://nodejs.org). Minimum required version is 6.9.1. Node distributions include NPM, the Node Package Manager.
 
-#### Yarn
-Install Yarn globally (if installed locally, the package installation may try to remove it, as it is not declared as a project dependency, and run into a problem)
+#### [Optional] Using Yarn
+If using Yarn, install it globally. If installed locally, the package installation may try to remove it, as it is not declared as a project dependency, and run into a problem.
 ```
 npm install -g yarn
 ```
 
 #### Project dependencies
-The project dependencies are declared in **package.json**. They can be installed by NPM or Yarn. Yarn is recommended. If **yarn.lock** file does not exist, it will be created and versions locked. After cloning the project, run **yarn**:
+The project dependencies are declared in **package.json**. They can be installed by NPM or Yarn. Either should work, however, Yarn is more performant and resilient.
 ```
+npm install
+
+-- OR --
+
 yarn
 ```
 **NOTE:** On Windows, it is possible for the Node modules installation by either NPM or Yarn to fail with a message stating a staging directory could not be renamed. Try disabling the Antivirus (both Real-time and Cloud-based protection). Another thing to try is to change the maximum path lenght, kept in the MAX_PATH environment variable, originally set to 260 characters, to a larger value:
