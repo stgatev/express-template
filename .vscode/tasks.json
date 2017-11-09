@@ -12,12 +12,10 @@
         {
             "taskName": "build",
             "isBuildCommand": true,
-            "isShellCommand": true,
             "echoCommand": true,
-            "command": "npm",
+            "command": "node",
             "args": [
-                "run",
-                "build"
+                "node_modules/typescript/bin/tsc"
             ],
             "problemMatcher": "$tsc"
         },
@@ -33,6 +31,7 @@
                 "--require",
                 "ts-node/register",
                 "--colors",
+                "--exit",
                 "${workspaceRoot}/test/**/*.test.ts"
             ],
             "problemMatcher": "$tsc"

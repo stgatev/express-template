@@ -1,6 +1,6 @@
 'use strict';
 
-export class Subscriber {
+export class User {
     id: string;
     name: string;
 }

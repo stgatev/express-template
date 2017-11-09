@@ -1,13 +1,16 @@
 'use strict';
 
-var users = require('../../data/users.json');
-var jp = require('jsonpath')
+import { User } from '../models/User';
 
-module.exports = {
-    get: function (id) {
+const jp = require('jsonpath');
+
+const users = require('../../data/users.json');
+
+export class UsersRepository {
+    public static get(id): User {
         return jp.query(users, '$..[?(@.id=='+id+')]')[0];
-    },
-    all: function () {
+    }
+    public static all(): User[] { 
         return users;
     }
 };

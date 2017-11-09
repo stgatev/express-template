@@ -1,9 +1,9 @@
- 'use strict';
+'use strict';
 
- var repository = require('../../lib/usersRepository');
+import { UsersRepository as Users } from '../../lib/UsersRepository';
 
- module.exports = {
-     get: function users_getById(req, res) {
-         res.json(repository.get(req.params['id']))
-     }    
- };
+module.exports = {
+    get: function users_getById(req, res) {
+        res.json(Users.get(req.params['id']))
+    }    
+};
