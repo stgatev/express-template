@@ -10,20 +10,10 @@ This is a NodeJS / Express application. It is written in TypeScript, and uses Sw
 #### NodeJS with NPM
 Download Node from [nodejs.org](https://nodejs.org). Minimum required version is 6.9.1. Node distributions include NPM, the Node Package Manager.
 
-#### [Optional] Using Yarn
-If using Yarn, install it globally. If installed locally, the package installation may try to remove it, as it is not declared as a project dependency, and run into a problem.
-```
-npm install -g yarn
-```
-
 #### Project dependencies
-The project dependencies are declared in **package.json**. They can be installed by NPM or Yarn. Either should work, however, Yarn is more performant and resilient.
+The project dependencies are declared in **package.json**. They can be installed by NPM or Yarn.
 ```
 npm install
-
--- OR --
-
-yarn
 ```
 **NOTE:** On Windows, it is possible for the Node modules installation by either NPM or Yarn to fail with a message stating a staging directory could not be renamed. Try disabling the Antivirus (both Real-time and Cloud-based protection). Another thing to try is to change the maximum path lenght, kept in the MAX_PATH environment variable, originally set to 260 characters, to a larger value:
 ```
@@ -31,7 +21,7 @@ SET MAX_PATH=10000
 ```
 
 ### Configuration
-Configuration is handled by [Node Config](https://www.npmjs.com/package/config), which supports multi-level overrides. Default configuration is stored in **./config/default.json** file. For non-dev environments, overriding configuration is stored in **./config/{$NODE\_ENV}.json** file, where **$NODE\_ENV** is the name of the environment variable determining the deployment environment (e.g. ci, staging, production).
+Configuration is handled by [Node Config](https://www.npmjs.com/package/config), which supports multi-level overrides. Default configuration is stored in **./config/default.json** file. For non-dev environments, overriding configuration is stored in **./config/{$NODE\_ENV}.json** file, where **NODE\_ENV** is the name of the environment variable determining the deployment environment (e.g. dev, ci, staging, production).
 
 ### Running the code
 In the root directory of the project, run
