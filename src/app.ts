@@ -7,9 +7,6 @@ import * as swaggerUi from 'swaggerize-ui';
 import * as uuid from 'uuid';
 import * as config from 'config';
 
-// iisnode changes the working directory to that of the handler
-process.chdir(path.resolve(__dirname + './..'));
-
 class App {
     public express: express.Application;
 

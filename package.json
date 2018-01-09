@@ -1,8 +1,11 @@
 {
     "name": "express-template",
+    "engines": {
+        "node": ">=6.11"
+    },
     "version": "1.0.0",
     "description": "Express Template",
-    "main": "dist/server.js",
+    "main": "start.js.js",
     "repository": "git@github.com:stgatev/express-template.git",
     "author": "Stan Gatev <stgatev@yahoo.com>",
     "license": "SEE LICENSE IN license.txt",
@@ -11,11 +14,11 @@
         "build": "tsc",
         "prebuild": "npm run clean",
         "postbuild": "cpx src/**/*.{json,js} dist",
-        "start": "node dist/server.js",
+        "start": "node start.js.js",
         "prestart": "npm run build",
         "test": "mocha --reporter spec --require ts-node/register --exit tests/**/*.test.ts",
         "pretest": "npm run build",
-        "wstart": "concurrently \"tsc -w\" \"cpx src/**/*.{json,js} dist --watch\" \"node dist/server.js\"",
+        "wstart": "concurrently \"tsc -w\" \"cpx src/**/*.{json,js} dist --watch\" \"node start.js.js\"",
         "prewstart": "npm run build"
     }
 }
