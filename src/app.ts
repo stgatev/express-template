@@ -15,8 +15,6 @@ class App {
             .use(bodyParser.json())
             .use(bodyParser.urlencoded({ extended: false }))
 
-            .set('config', config)
-
             .use((req, res, next) => { (req as any).id = uuid.v4(); next(); })
             .use(morgan(config.has('logger.format') ? config.get('logger.format') as string : 'dev'))
 
