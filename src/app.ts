@@ -7,6 +7,11 @@ import * as swaggerUi from 'swaggerize-ui';
 import * as uuid from 'uuid';
 import * as config from 'config';
 
+morgan.token('id', (req) => { return (req as any).id; });
+
+// Copy configuration from environment
+config['zimbala'] = process.env['zimbala'];
+
 class App {
     public express: express.Application;
 
@@ -32,8 +37,6 @@ class App {
             .use('/swagger', swaggerUi({
                 docs: '/swagger/docs'
             }));
-
-        morgan.token('id', (req) => { return (req as any).id; });
     }
 }
 

@@ -13,7 +13,10 @@
             "outFiles": ["${workspaceRoot}/dist/**/*.js"],
             "sourceMaps": true,
             "preLaunchTask": "build",
-            "outputCapture": "std"
+            "outputCapture": "std",
+            "env": {
+                "zimbala": "zumbala"
+            }
         }
     ]
 }
