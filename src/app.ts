@@ -7,10 +7,19 @@ import * as swaggerUi from 'swaggerize-ui';
 import * as uuid from 'uuid';
 import * as config from 'config';
 
+// Make the request id available to morgan so each log entry is tagged with it
 morgan.token('id', (req) => { return (req as any).id; });
 
-// Copy configuration from environment
-config['zimbala'] = process.env['zimbala'];
+// In addition to environment-specific configuration files, configuration may be read
+// from environment variables. The optional step below puts copies of the environment variables 
+// in the config module. Since the config module is a singleton, they will be available everywhere 
+// by simply importing config:
+//
+//     import * as config from 'config';
+//
+// This may also be a good place to store configuration that is only available at run time, 
+// but does not change once the application runs.
+config['foo'] = process.env['foo'];
 
 class App {
     public express: express.Application;
