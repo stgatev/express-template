@@ -42,7 +42,7 @@ The other way is to make the **build** task fire after the NPM modules installat
 ## Code changes
 
 ### Wrapper startup script
-Azure deployment looks inside **package.json** to figure the application's entry point, and uses it to generate **web.config**. Because the latter is generated prior to building the application, a TypeScript project will not have the startup file generated, and Azure will fail to generate **web.config**. To aid it, we use a wrapper, **start.js**, which is present at the time of **web.config** generation, before the TypeScript compilation.
+Azure deployment looks inside **package.json** to figure the application's entry point, and uses it to generate **web.config**. Because the latter is generated prior to building the application, a TypeScript project will not have the startup file generated, and Azure will fail to generate **web.config**. To aid it, we use a wrapper, **index.js**, which is present at the time of **web.config** generation, before the TypeScript compilation.
 
 ## Good reads
 ### Setting up a project with TypeScript + Express
