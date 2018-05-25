@@ -5,11 +5,16 @@
   },
   "version": "1.0.0",
   "description": "Express Template",
-  "main": "start.js",
-  "repository": "git@github.com:stgatev/express-template.git",
   "author": "Stan Gatev <stgatev@yahoo.com>",
   "license": "SEE LICENSE IN license.txt",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stgatev/express-template.git"
+  },
+  "keywords": [],
+  "main": "index.js",
   "scripts": {
+    "postinstall": "npm run build",
     "clean": "rimraf dist",
     "build": "tsc",
     "prebuild": "npm run clean",
@@ -18,7 +23,7 @@
     "prestart": "npm run build",
     "test": "mocha --reporter spec --require ts-node/register --exit tests/**/*.test.ts",
     "pretest": "npm run build",
-    "wstart": "concurrently \"tsc -w\" \"cpx src/**/*.{json,js} dist --watch\" \"node start.js.js\"",
+    "wstart": "concurrently \"tsc -w\" \"cpx src/**/*.{json,js} dist --watch\" \"node index.js\"",
     "prewstart": "npm run build"
   }
 }

@@ -1,6 +1,8 @@
-# express-template
+# _Project Name_
 
 ## Description
+_Project Description_
+
 This is a NodeJS / Express application. It is written in TypeScript, and uses Swagger for REST API routing.
 
 ## Getting Started
@@ -49,5 +51,7 @@ The project includes Visual Studio Code tasks configuration as well as a launch 
 Visual Studio Code can run *tasks*. To run a task, open the Command Palette (View->Command Palette or *Ctrl-Shift-P*), then select "Run Task" command, and select the task to run.
 
 - The **build** task invokes the TypeScript transpiler and converts the TypeScript code to JavaScript, ready for execution. The **build** task is also set as a default build task so it can be invoked with "Tasks: Run Build Task" command (*Ctrl-Shift-B*).
+
+- The **watch** task will start the TypeScript transpiler in *watch* mode, which will monitor the source files for changes and will do on-the-fly transpiling. The watch task will continue running until it is stopped by invoking "Tasks: Terminate Running Task".
 
 - The **test** task runs all unit and integration tests. The task is configured as a designated test task in Visual Studio Code, and can be executed directly with "Tasks: Run Test Task".

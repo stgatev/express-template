@@ -8,14 +8,15 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/start.js",
+            "program": "${workspaceRoot}/index.js",
             "cwd": "${workspaceRoot}",
             "outFiles": ["${workspaceRoot}/dist/**/*.js"],
             "sourceMaps": true,
             "preLaunchTask": "build",
             "outputCapture": "std",
             "env": {
-                "zimbala": "zumbala"
+                "NODE_ENV": "dev",
+                "foo": "bar"
             }
         }
     ]

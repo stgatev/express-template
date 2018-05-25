@@ -34,8 +34,8 @@ class App {
 
             // REST handlers
             .use(swaggerize({
-                api: path.resolve('./spec/api.json'),
-                handlers: path.resolve('./dist/handlers'),
+            api: path.resolve('./spec/api.json'),
+            handlers: path.resolve('./dist/handlers'),
                 docspath: '/swagger/docs'
             }))
 

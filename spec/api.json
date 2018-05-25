@@ -62,8 +62,8 @@
 						"description": "OK",
 						"schema": {
 							"$ref": "#/definitions/User"
+							}
 						}
-					}
 				},
 				"deprecated": false
 			}

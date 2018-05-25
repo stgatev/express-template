@@ -25,6 +25,20 @@ Make sure to add **.deployment** and **deploy.cmd** files to the project.
 ### Dev modules
 If using Azure's Git deployment option, with the building taking place in Azure, it is necessary to move the modules needed for building from **devDependencies** to **dependencies**.
 
+### Including a transpilation step into the deployment
+Azure Node deployment is made with JS project in mind. For a TS, an extra transpilation step is required. There are two ways to include the step into the deployment sequence.
+One is to include it as a step in **deploy.cmd*. Insert the following lines after Step 3, Installing the NPM Packages:
+```
+    :: 4. Compile TypeScript
+    echo Transpiling TypeScript in %DEPLOYMENT_TARGET%...
+    call :ExecuteCmd node %DEPLOYMENT_TARGET%\node_modules\typescript\bin\tsc -p "%DEPLOYMENT_TARGET%"
+```
+The other way is to make the **build** task fire after the NPM modules installation, as a **postinstall** task in **package.json**:
+````
+    "scripts": {
+      "postinstall": "npm run build",
+````
+
 ## Code changes
 
 ### Wrapper startup script
